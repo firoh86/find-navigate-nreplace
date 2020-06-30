@@ -4,41 +4,51 @@ $color1: rgb(94, 147, 226);
 .container {
   width: 80%;
   margin: 0 auto;
-  margin-top: 3em;
-  background-color: rgb(48, 49, 49);
-  box-sizing: content-box;
-  padding: 2em;
-  border-radius: 5px;
-  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
-  &__title {
-    color: $color1;
-  }
+
   &__bloq {
     display: flex;
     justify-content: space-around;
     align-items: center;
   }
+}
+
+.card {
+  background-color: rgb(48, 49, 49);
+  box-sizing: content-box;
+  padding: 2em;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+  margin-top: 3em;
+  margin-bottom: 1em;
+  &__title {
+    color: $color1;
+  }
   &__text {
     padding: 1.5em 0;
   }
 }
-.findwords {
-  border-radius: 10px;
-  border: none;
-  padding: 0.4em;
-}
-.match {
-  padding: 0 0.4em;
-}
-.button {
-  border: none;
-  padding: 0.4em 0.6em;
-  border-radius: 15px;
-  background-color: $color1;
-  color: white;
-  font-size: 1em;
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
-  &:hover {
-    transform: scale(0.95);
+.form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  &__searchbar {
+    border-radius: 10px;
+    border: none;
+    height: 30px;
+  }
+  &__match {
+    padding: 0 0.4em;
+  }
+  &__button {
+    border: none;
+    padding: 0.4em 0.6em;
+    border-radius: 15px;
+    background-color: $color1;
+    color: white;
+    font-size: 1em;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+    &:hover {
+      transform: scale(0.95);
+    }
   }
 }
