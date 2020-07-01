@@ -8,14 +8,19 @@ const searchbar = document.getElementById('searchbar');
 let textArray;
 let compare;
 
+// evita la recarga por submit
+form.addEventListener('click', (e) => {
+  e.preventDefault();
+});
+
 const LoadText = () => {
   let actualtext = texto.textContent;
-
-  textArray = actualtext.split(' ');
+  let points = actualtext.split('.').join(' .');
+  textArray = points.split(' ');
   // console.log(textArray);
 };
-// algoritmo de comprobacion
 
+// algoritmo de comprobacion
 const comparison = (tocompare) => {
   // console.log(tocompare.length);
   let matchcount = 0;
@@ -23,6 +28,7 @@ const comparison = (tocompare) => {
   let onlymatch = [];
   for (let word of textArray) {
     let comp = word.slice(0, tocompare.length);
+
     if (comp == tocompare) {
       newArray.push(word);
       onlymatch.push(word);
@@ -43,6 +49,10 @@ searchbar.addEventListener('change', (e) => {
   }
 });
 
-window.onload = () => {
+// funcion que recorre el texto y aplica los spans
+// funcion que recorre el texto y limpia los spans o recrea el texto desde el save
+
+// window.onload = () => {LoadText();};
+addEventListener('DOMContentLoaded', () => {
   LoadText();
-};
+});
